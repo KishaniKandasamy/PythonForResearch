@@ -14,3 +14,5 @@ X=np.cumsum(delta_X, axis=1)
 #concatenate numpy arrays 
 X=np.concatenate((X_O,X), axis=1)
 
+#plot the random walks
+plt.plot(X[0],X[1] ,"ro-");
