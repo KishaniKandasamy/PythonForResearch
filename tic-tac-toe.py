@@ -20,15 +20,6 @@ def random_place(board, player):
         updatedboard=place(board,player,ind)
         return updatedboard
     
-def placeeach(board):
-    for i in range(9):
-        if(i%2==0):
-            board=random_place(board,1)
-        else:
-            board=random_place(board,2)
-    return board
-        
-
     
 def row_win(board, player):
     if np.any(np.all(board==player, axis=1)): # this checks if any row contains all positions equal to player-------------> OR if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
@@ -60,14 +51,25 @@ def evaluate(board):
     if np.all(board != 0) and winner == 0:
         winner = -1
     return winner
+
     
-  
+def play_game():
+    board = create_board()
+    winner = 0
+    while winner == 0:
+        for player in [1, 2]:
+            random_place(board, player)
+            winner = evaluate(board)
+            if winner != 0:
+                break
+    return winner
+    
+       
+results = []   
+for i in range(1000):    
+    results.append(play_game())
     
 
-B=create_board()
-print(B)
-placeeach(B)
-print(B)
-evaluate(B)
+results.count(1)
 
-
+ 
