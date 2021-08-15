@@ -35,7 +35,7 @@ def row_win(board, player):
         return False
     
 def row_win(board, player):
-    if np.any(np.all(board==player, axis=0)): # this checks if any row contains all positions equal to player-------------> OR if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
+    if np.any(np.all(board==player, axis=1)): # this checks if any row contains all positions equal to player-------------> OR if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
         return True
     else:
         return False
