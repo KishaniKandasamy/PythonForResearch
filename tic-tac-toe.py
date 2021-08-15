@@ -63,13 +63,28 @@ def play_game():
             if winner != 0:
                 break
     return winner
-    
+  
+def play_strategic_game():
+    board, winner = create_board(), 0
+    board[1,1] = 1
+    while winner == 0:
+        for player in [2,1]:
+            random_place(board, player)
+            winner = evaluate(board)
+            if winner != 0:
+                break
+    return winner
+
+
        
 results = []   
 for i in range(1000):    
     results.append(play_game())
     
+ results.count(1)
 
+
+#########################################Player 1 always starts with the middle square(play_strategic_game)
+
+results = [play_strategic_game() for i in range(1000)]
 results.count(1)
-
- 
