@@ -1,6 +1,6 @@
 import random 
 import numpy as np
-
+#random.seed(1)
 
 def create_board():
     board= np.zeros((3,3), dtype=int)
@@ -28,9 +28,17 @@ def placeeach(board):
             board=random_place(board,2)
     return board
         
-        
-
+def row_win(board, player):
+    if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
+        return True
+    else:
+        return False
+  
+    
 
 B=create_board()
 print(B)
 placeeach(B)
+print(B)
+row_win(B,2)
+
