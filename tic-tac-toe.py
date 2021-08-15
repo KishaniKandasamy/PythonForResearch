@@ -28,14 +28,25 @@ def placeeach(board):
             board=random_place(board,2)
     return board
         
+
+    
 def row_win(board, player):
-    if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
+    if np.any(np.all(board==player, axis=1)): # this checks if any row contains all positions equal to player-------------> OR if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
         return True
     else:
         return False
     
-def row_win(board, player):
-    if np.any(np.all(board==player, axis=1)): # this checks if any row contains all positions equal to player-------------> OR if(np.any([np.all(board[i] == player) for i in range(board.shape[0])])):
+     
+def col_win(board, player):
+     if np.any(np.all(board==player, axis=0)): # this checks if any column  contains all positions equal to player.
+        return True
+     else:
+        return False
+
+def diag_win(board, player):
+    if np.all(np.diag(board)==player) or np.all(np.diag(np.fliplr(board))==player):
+        # np.diag returns the diagonal of the array
+        # np.fliplr rearranges columns in reverse order
         return True
     else:
         return False
@@ -46,5 +57,5 @@ B=create_board()
 print(B)
 placeeach(B)
 print(B)
-row_win(B,2)
+
 
