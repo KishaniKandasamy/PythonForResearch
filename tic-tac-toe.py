@@ -50,6 +50,17 @@ def diag_win(board, player):
         return True
     else:
         return False
+    
+def evaluate(board):
+    winner = 0
+    for player in [1, 2]:
+        if row_win(board, player) or col_win(board, player) or diag_win(board, player):
+            winner = player
+        pass
+    if np.all(board != 0) and winner == 0:
+        winner = -1
+    return winner
+    
   
     
 
@@ -57,5 +68,6 @@ B=create_board()
 print(B)
 placeeach(B)
 print(B)
+evaluate(B)
 
 
