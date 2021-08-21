@@ -35,3 +35,16 @@ def countWordsFast(text):
 text = "I am a girl a girl lives in a village near to Col"
 countWords(text)
 
+##read a book
+def read_book(title_path):
+    """Read a book and return it as a String"""
+    with open(title_path , "r",encoding="utf8") as current_file:
+        text = current_file.read()
+        text = text.replace("\n","").replace("\r","")
+    return text
+
+text = read_book("./books/German/shakespeare/Romeo und Julia.txt")
+len(text)
+idx = text.find("name")
+sampletext= text[idx : idx+1000]
+sampletext
