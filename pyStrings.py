@@ -48,3 +48,10 @@ len(text)
 idx = text.find("name")
 sampletext= text[idx : idx+1000]
 sampletext
+
+#find unique words
+def word_stats(word_counts):
+    """count number of unique words and frequencies"""
+    num_uniqueword = len(word_counts)
+    count=word_counts.values()
+    return (num_uniqueword, count)
