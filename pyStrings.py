@@ -55,3 +55,8 @@ def word_stats(word_counts):
     num_uniqueword = len(word_counts)
     count=word_counts.values()
     return (num_uniqueword, count)
+
+text = read_book("./books/German/shakespeare/Romeo und Julia.txt")
+word_counts = countWords(text)
+(num_uniqueword, count) = word_stats(word_counts)
+print(num_uniqueword, sum(count))
