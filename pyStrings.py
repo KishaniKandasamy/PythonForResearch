@@ -16,3 +16,22 @@ def countWords(text):
             
 text = "I am a girl a girl lives in a village near to col"
 countWords(text)
+
+
+### faster method using Counter
+from collections import Counter
+
+def countWordsFast(text):
+    """Count the numbers of words occurs in a text"""
+    
+    text =text.lower()
+    skips=[",","!",";",":","."]
+    for ch in skips:
+        text=text.replace(ch,"")
+    
+    word_counts = Counter(text.split(" ")) #count the objects index wise (if a String charwise if list each items)
+    return word_counts
+            
+text = "I am a girl a girl lives in a village near to Col"
+countWords(text)
+
