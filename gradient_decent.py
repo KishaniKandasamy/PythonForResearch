@@ -20,3 +20,5 @@ def gradient_decent(x,y):
         m_curr = m_curr - learning_rate * md
         b_curr = b_curr - learning_rate * bd
         print("m = {} , b= {} ,cost = {} iteration = {} ".format(m_curr,b_curr,cost_MSE, i))
+
+gradient_decent(x,y)
