@@ -9,7 +9,7 @@ def gradient_decent(x,y):
     m_curr = b_curr = 0
     iterations = 1000
     n = len(x) #no of data points 
-    learning_rate = 0.01
+    learning_rate = 0.08
    
        
     for i in range(iterations):
